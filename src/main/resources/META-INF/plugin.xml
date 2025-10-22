@@ -1,5 +1,5 @@
 <idea-plugin>
-    <id>com.ludosch.intellij.sync-java-home</id>
+    <id>com.ludosch.sync-java-home</id>
     <name>JAVA_HOME SDK Sync</name>
     <version>0.2.0</version>
     <vendor email="ludosch@users.noreply.github.com" url="https://github.com/ludosch/intellij-sdk-java-home">ludosch</vendor>
