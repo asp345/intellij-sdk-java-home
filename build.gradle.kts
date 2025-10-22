@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "com.ludosch"
-version = "0.2.0"
+version = "0.2.2"
 
 kotlin {
     jvmToolchain(17)
@@ -24,8 +24,14 @@ dependencies {
 intellijPlatform {
     pluginConfiguration {
         ideaVersion {
-            sinceBuild.set("252")
+            sinceBuild.set("251")
             untilBuild.set("252.*")
+        }
+    }
+
+    pluginVerification {
+        ides {
+            recommended()
         }
     }
 

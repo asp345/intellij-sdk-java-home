@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>com.ludosch.sync-java-home</id>
     <name>JAVA_HOME SDK Sync</name>
-    <version>0.2.0</version>
+    <version>0.2.2</version>
     <vendor email="ludosch@users.noreply.github.com" url="https://github.com/ludosch/intellij-sdk-java-home">ludosch</vendor>
 
     <description><![CDATA[
@@ -23,17 +23,16 @@
     ]]></description>
 
     <change-notes><![CDATA[
-        <h3>Version 0.2.0</h3>
+        <h3>Version 0.2.2</h3>
         <ul>
-            <li>Added manual sync action in Tools menu</li>
-            <li>Improved SDK detection and validation</li>
-            <li>Better error handling and logging</li>
+            <li>Extended compatibility to support IntelliJ IDEA 2025.1.x and 2025.2.x</li>
         </ul>
     ]]></change-notes>
 
     <!-- Compatibilité (since/until) patchée automatiquement par Gradle 2.x -->
     <!-- <idea-version since-build="252" until-build="252.*" /> -->
 
+    <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.java</depends>
 
     <extensions defaultExtensionNs="com.intellij">
