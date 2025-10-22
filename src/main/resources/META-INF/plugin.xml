@@ -1,0 +1,52 @@
+<idea-plugin>
+    <id>com.ludosch.intellij.sync-java-home</id>
+    <name>JAVA_HOME SDK Sync</name>
+    <version>0.2.0</version>
+    <vendor email="ludosch@users.noreply.github.com" url="https://github.com/ludosch/intellij-sdk-java-home">ludosch</vendor>
+
+    <description><![CDATA[
+        <p>Synchronize your Project SDK with the <code>JAVA_HOME</code> environment variable on project startup.</p>
+        <p><strong>Features:</strong></p>
+        <ul>
+            <li>Shows a notification on project startup to sync the Project SDK with <code>JAVA_HOME</code></li>
+            <li>One-click synchronization via the notification</li>
+            <li>Automatically creates and registers the JDK in IntelliJ if not already present</li>
+            <li>Updates Language Level to match the SDK version</li>
+            <li>Manual sync action available in Tools menu</li>
+            <li>Perfect for teams using tools like direnv, nix, devbox, or asdf to manage JAVA_HOME per project</li>
+        </ul>
+        <p><strong>Usage:</strong></p>
+        <ul>
+            <li>On project open: A notification appears with "Sync Now" button to synchronize</li>
+            <li>Manual: Use <em>Tools → Sync SDK from JAVA_HOME</em> to manually trigger synchronization at any time</li>
+        </ul>
+    ]]></description>
+
+    <change-notes><![CDATA[
+        <h3>Version 0.2.0</h3>
+        <ul>
+            <li>Added manual sync action in Tools menu</li>
+            <li>Improved SDK detection and validation</li>
+            <li>Better error handling and logging</li>
+        </ul>
+    ]]></change-notes>
+
+    <!-- Compatibilité (since/until) patchée automatiquement par Gradle 2.x -->
+    <!-- <idea-version since-build="252" until-build="252.*" /> -->
+
+    <depends>com.intellij.java</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <postStartupActivity implementation="com.ludosch.SyncJavaHomeStartupActivity"/>
+        <notificationGroup id="com.ludosch" displayType="BALLOON"/>
+    </extensions>
+
+    <actions>
+        <action id="com.ludosch.SyncSdkFromJavaHomeAction"
+                class="com.ludosch.SyncSdkFromJavaHomeAction"
+                text="Sync SDK from JAVA_HOME"
+                description="Synchronize Project SDK and Language Level with JAVA_HOME environment variable">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+    </actions>
+</idea-plugin>
