@@ -9,7 +9,7 @@ pluginManagement {
 
 plugins {
     // <— indispensable pour pouvoir utiliser `intellijPlatform { … }` dans settings
-    id("org.jetbrains.intellij.platform.settings") version "2.10.1"
+    id("org.jetbrains.intellij.platform.settings") version "2.11.0"
 }
 
 rootProject.name = "sync-java-home-plugin"

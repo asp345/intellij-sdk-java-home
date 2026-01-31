@@ -7,7 +7,7 @@ group = "com.ludosch"
 version = "0.2.2"
 
 kotlin {
-    jvmToolchain(17)
+    jvmToolchain(21)
 }
 
 dependencies {
@@ -18,6 +18,12 @@ dependencies {
         // Install plugins in sandbox for testing
         plugin("systems.fehn.intellijdirenv", "0.2.10")
         plugin("com.chriscarini.jetbrains.environment-variable-settings-summary", "5.1.3")
+    }
+}
+
+tasks {
+    buildSearchableOptions {
+        enabled = false
     }
 }
 
